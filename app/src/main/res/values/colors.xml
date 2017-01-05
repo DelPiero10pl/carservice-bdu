@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#86c543</color>
+    <color name="colorPrimaryDark">#5c8c29</color>
+    <color name="colorEvent">#ffffff</color>
+    <color name="colorBg">#edeae3</color>
+    <color name="colorText">#34302d</color>
+    <color name="colorAllert">#ae0b0b</color>
+    <color name="colorEventline">#b80909</color>
+</resources>
