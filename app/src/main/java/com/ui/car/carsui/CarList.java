@@ -13,10 +13,9 @@ public class CarList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        context = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_list);
+        context = this;
         View r = (View) findViewById(R.id.carcard);
 
         r.setOnClickListener(new View.OnClickListener() {

@@ -17,13 +17,39 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         context = this;
-        Button r = (Button) findViewById(R.id.button11);
-        r.setOnClickListener(new View.OnClickListener() {
+        Button car = (Button) findViewById(R.id.carbutton);
+        Button plan = (Button) findViewById(R.id.planrepairbutton);
+        Button cost = (Button) findViewById(R.id.costbutton);
+        Button settings = (Button) findViewById(R.id.settingsbutton);
+
+        car.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context, CarList.class));
             }
         });
+
+        plan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,PlanRepair.class));
+            }
+        });
+
+        cost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,CostStat.class));
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,SettingsApp.class));
+            }
+        });
+
 
     }
 }
