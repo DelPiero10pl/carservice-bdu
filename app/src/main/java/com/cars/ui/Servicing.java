@@ -1,4 +1,4 @@
-package com.ui.car.carsui;
+package com.cars.ui;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;

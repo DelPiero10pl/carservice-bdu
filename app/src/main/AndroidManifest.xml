@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ui.car.carsui">
+          package="com.cars.ui">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -13,7 +13,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".Home"
+                android:name="com.cars.ui.Home"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,30 +22,30 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".CarList"
+                android:name="com.cars.ui.CarList"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".Car"
+                android:name="com.cars.ui.Car"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".Servicing"
+                android:name="com.cars.ui.Servicing"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".PlanRepair"
+                android:name="com.cars.ui.PlanRepair"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".CostStat"
+                android:name="com.cars.ui.CostStat"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".SettingsApp"
+                android:name="com.cars.ui.SettingsApp"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".AddRepair"
+        <activity android:name="com.cars.ui.AddRepair"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

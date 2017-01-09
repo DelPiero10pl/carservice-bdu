@@ -1,6 +1,5 @@
-package com.ui.car.carsui;
+package com.cars.ui;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

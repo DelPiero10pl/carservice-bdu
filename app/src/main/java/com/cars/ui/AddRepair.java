@@ -1,13 +1,13 @@
-package com.ui.car.carsui;
+package com.cars.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SettingsApp extends AppCompatActivity {
+public class AddRepair extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings_app);
+        setContentView(R.layout.activity_add_repair);
     }
 }

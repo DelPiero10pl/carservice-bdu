@@ -1,4 +1,4 @@
-package com.ui.car.carsui;
+package com.cars.ui;
 
 import org.junit.Test;
 

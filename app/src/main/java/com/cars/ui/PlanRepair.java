@@ -1,4 +1,4 @@
-package com.ui.car.carsui;
+package com.cars.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class PlanRepair extends AppCompatActivity {
 
