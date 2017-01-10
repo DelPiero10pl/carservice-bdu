@@ -2,7 +2,7 @@
     <string name="app_name">CarSUI</string>
     <string name="car_prompt">Wybierz samochód</string>
     <string name="validate_error">Formularz nie został poprawnie wypełniony</string>
-    <string-array name="fuel_type">
+    <string-array name="fuel_array">
         <item>ON</item>
         <item>PB</item>
         <item>LPG</item>

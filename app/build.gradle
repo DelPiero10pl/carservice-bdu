@@ -34,4 +34,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.1.0'
     compile 'com.google.android.gms:play-services-maps:+'
     compile 'com.github.florent37:materialtextfield:1.0.5'
+    compile 'com.github.thorbenprimke:realm-recyclerview:0.9.25'
 }
