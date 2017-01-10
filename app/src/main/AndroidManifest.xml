@@ -13,7 +13,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name="com.cars.ui.Home"
+                android:name=".Home"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,30 +22,38 @@
             </intent-filter>
         </activity>
         <activity
-                android:name="com.cars.ui.CarList"
+                android:name=".CarList"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name="com.cars.ui.Car"
+                android:name=".Car"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name="com.cars.ui.Servicing"
+                android:name=".Servicing"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name="com.cars.ui.PlanRepair"
+                android:name=".PlanRepair"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name="com.cars.ui.CostStat"
+                android:name=".CostStat"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name="com.cars.ui.SettingsApp"
+                android:name=".SettingsApp"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name="com.cars.ui.AddRepair"
+        <activity
+                android:name=".AddRepair"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".AddCar"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".AddHistoryRepair"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
