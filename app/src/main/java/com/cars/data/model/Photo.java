@@ -5,16 +5,16 @@ import io.realm.annotations.PrimaryKey;
 
 public class Photo extends RealmObject {
     @PrimaryKey
-    private Integer photoID;
+    private Integer id;
     private String filename;
     private Repair repair;
 
-    public Integer getPhotoID() {
-        return photoID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setPhotoID(Integer photoID) {
-        this.photoID = photoID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFilename() {

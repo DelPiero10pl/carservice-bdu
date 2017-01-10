@@ -6,7 +6,7 @@ import io.realm.annotations.PrimaryKey;
 
 public class Repair extends RealmObject {
     @PrimaryKey
-    private Integer repairID;
+    private Integer id;
     private String name;
     private String date;
     private  double workshopCost;
@@ -18,12 +18,12 @@ public class Repair extends RealmObject {
 
     private RealmList<Part> parts;
 
-    public Integer getRepairID() {
-        return repairID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setRepairID(Integer repairID) {
-        this.repairID = repairID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

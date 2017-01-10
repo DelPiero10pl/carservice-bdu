@@ -6,16 +6,16 @@ import io.realm.annotations.PrimaryKey;
 public class Part extends RealmObject {
 
     @PrimaryKey
-    private Integer partID;
+    private Integer id;
     private String name;
     private Double price;
 
-    public Integer getPartID() {
-        return partID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setPartID(Integer partID) {
-        this.partID = partID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

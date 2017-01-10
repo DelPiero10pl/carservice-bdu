@@ -5,7 +5,7 @@ import io.realm.annotations.PrimaryKey;
 
 public class Car extends RealmObject {
     @PrimaryKey
-    private Integer carId;
+    private Integer id;
     private String mark;
     private String model;
     private Integer productionYear;
@@ -13,12 +13,12 @@ public class Car extends RealmObject {
     private Double capacity;
     private Integer fuelTyp;
 
-    public Integer getCarId() {
-        return carId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCarId(Integer carId) {
-        this.carId = carId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getMark() {

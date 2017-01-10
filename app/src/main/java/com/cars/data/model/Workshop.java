@@ -5,16 +5,16 @@ import io.realm.annotations.PrimaryKey;
 
 public class Workshop extends RealmObject {
     @PrimaryKey
-    private Integer workshopID;
+    private Integer id;
     private String name;
     private String localization;
 
-    public Integer getWorkshopID() {
-        return workshopID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setWorkshopID(Integer workshopID) {
-        this.workshopID = workshopID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
