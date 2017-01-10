@@ -36,7 +36,8 @@ public abstract class Controller<T extends RealmModel> {
     }
 
     protected Integer nexID() {
-        return realm.where(model).max("id").intValue() + 1;
+        int max = (query().max("id") == null)? 0 : query().max("id").intValue();
+        return max + 1;
     }
 
     protected RealmQuery<T> query() {
@@ -44,6 +45,6 @@ public abstract class Controller<T extends RealmModel> {
     }
 
     protected T create() {
-        return (T) realm.createObject(model);
+        return (T) realm.createObject(model, nexID());
     }
 }

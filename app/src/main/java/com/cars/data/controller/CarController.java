@@ -4,6 +4,8 @@ import com.cars.data.model.Car;
 
 public class CarController extends Controller<Car> {
 
+    public static final String CAR_ID = "car_id";
+
     public CarController() {
         super(Car.class);
     }

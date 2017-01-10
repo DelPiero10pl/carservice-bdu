@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">CarSUI</string>
     <string name="car_prompt">Wybierz samochód</string>
-    <string-array name="country_arrays">
-        <item>Malaysia</item>
-        <item>United States</item>
-        <item>Indonesia</item>
-        <item>France</item>
-        <item>Italy</item>
-        <item>Singapore</item>
-        <item>New Zealand</item>
-        <item>India</item>
+    <string name="validate_error">Formularz nie został poprawnie wypełniony</string>
+    <string-array name="fuel_type">
+        <item>ON</item>
+        <item>PB</item>
+        <item>LPG</item>
+        <item>INNE</item>
     </string-array>
 </resources>
