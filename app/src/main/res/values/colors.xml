@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2C3B63</color>
+    <color name="colorPrimary">#2c3b63</color>
     <color name="colorPrimaryDark">#1f2c4d</color>
     <color name="colorEvent">#ffffff</color>
     <color name="colorBg">#edeae3</color>
     <color name="colorText">#34302d</color>
     <color name="colorAllert">#ab1f20</color>
     <color name="colorEventline">#b80909</color>
-    <color name="colorAccent">#FF0051</color>
+    <color name="colorAccent">#ff0051</color>
     <color name="colorEdittext">#e67a90</color>
     <color name="colorTextButton">#848D82</color>
 
