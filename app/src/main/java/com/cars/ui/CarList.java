@@ -28,13 +28,6 @@ public class CarList extends AppCompatActivity {
         setContentView(R.layout.activity_car_list);
         context = this;
         initUI();
-
-        //carelement.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(context, Car.class));
-//            }
-//        });
         addcar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

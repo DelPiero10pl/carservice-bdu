@@ -5,7 +5,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DateHelper {
-    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    public static String dateFormat = "dd/MM/yyyy";
+    private static SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
     public static String now() {
         return sdf.format(Calendar.getInstance().getTime());
     }

@@ -35,7 +35,7 @@ public abstract class Controller<T extends RealmModel> {
         return query().equalTo("id", id).findFirst();
     }
 
-    protected Integer nexID() {
+    public Integer nexID() {
         int max = (query().max("id") == null)? 0 : query().max("id").intValue();
         return max + 1;
     }

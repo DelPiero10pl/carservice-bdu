@@ -54,8 +54,78 @@
                     <FrameLayout
                             android:id="@android:id/tabcontent"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="349dp">
 
+                        <LinearLayout
+                                android:id="@+id/tab4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical" android:weightSum="1" android:gravity="center">
+                            <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="104dp" android:layout_weight="0.56">
+                                <android.support.v7.widget.RecyclerView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" android:id="@+id/photo_list"/>
+                            </TableRow>
+                            <ImageButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" app:srcCompat="@drawable/car"
+                                    android:id="@+id/take_photo"/>
+                        </LinearLayout>
+                        <LinearLayout
+                                android:id="@+id/tab3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+                            <ScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+                                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:orientation="vertical">
+                                    <Switch
+                                            android:text="Wyłącz/ Włącz"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" android:id="@+id/workshop_is_enable"
+                                            android:layout_marginRight="20dp" android:layout_marginLeft="20dp"
+                                            android:layout_marginTop="20dp"/>
+                                    <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent" android:id="@+id/workshop_holder"
+                                            android:visibility="gone">
+                                        <LinearLayout
+                                                android:orientation="horizontal"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent">
+                                            <Spinner
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent" android:id="@+id/workshop_spiner"
+                                                    android:layout_weight="1"/>
+                                            <ImageButton
+                                                    android:layout_width="66dp"
+                                                    android:layout_height="61dp"
+                                                    app:srcCompat="@drawable/ic_edit_white_18dp"
+                                                    android:id="@+id/new_workshop"/>
+                                        </LinearLayout>
+                                        <android.support.v7.widget.CardView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent" android:layout_margin="10dp">
+                                            <EditText
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:inputType="numberDecimal"
+                                                    android:ems="10"
+                                                    android:id="@+id/workshop_cost" android:hint="Cena"
+                                                    android:layout_margin="10dp"
+                                                    android:textColorLink="@android:color/transparent"
+                                                    android:textCursorDrawable="@null"
+                                                    android:background="@android:color/transparent"/>
+                                        </android.support.v7.widget.CardView>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </ScrollView>
+                        </LinearLayout>
                         <LinearLayout
                                 android:id="@+id/tab1"
                                 android:layout_width="match_parent"
@@ -80,7 +150,7 @@
                                                     android:layout_height="wrap_content"
                                                     android:inputType="textPersonName"
                                                     android:ems="10"
-                                                    android:id="@+id/editText"
+                                                    android:id="@+id/name"
                                                     android:background="@android:color/transparent"
                                                     android:textCursorDrawable="@null" android:paddingTop="20dp" android:paddingBottom="20dp"
                                                     android:paddingLeft="5dp" android:paddingRight="5dp"
@@ -100,8 +170,9 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:inputType="textPersonName|date"
+                                                    android:focusable="false"
                                                     android:ems="10"
-                                                    android:id="@+id/editText1"
+                                                    android:id="@+id/date"
                                                     android:background="@android:color/transparent"
                                                     android:textCursorDrawable="@null" android:paddingTop="20dp" android:paddingBottom="20dp"
                                                     android:paddingLeft="5dp" android:paddingRight="5dp"
@@ -119,7 +190,7 @@
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:ems="10"
-                                                android:id="@+id/editText2"
+                                                android:id="@+id/millage"
                                                 android:background="@android:color/transparent"
                                                 android:textCursorDrawable="@null" android:paddingTop="20dp" android:paddingBottom="20dp"
                                                 android:paddingLeft="5dp" android:paddingRight="5dp"
@@ -132,13 +203,6 @@
                                             android:layout_height="match_parent" android:layout_marginTop="20dp"
                                             android:layout_marginLeft="20dp" android:layout_marginRight="20dp"
                                             android:layout_marginBottom="20dp">
-                                        <Spinner
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content" android:id="@+id/spinner"
-                                                android:spinnerMode="dropdown" android:entries="@array/fuel_array"
-                                                android:paddingTop="20dp" android:paddingBottom="20dp" android:paddingLeft="20dp"
-                                                android:prompt="@string/car_prompt"
-                                        />
                                     </android.support.v7.widget.CardView>
                                 </LinearLayout>
                             </ScrollView>
@@ -149,213 +213,19 @@
                                 android:layout_height="match_parent"
                                 android:focusable="true"
                                 android:focusableInTouchMode="true"
-                                android:orientation="vertical">
+                                android:orientation="vertical" android:gravity="center">
 
-                            <ScrollView
+                            <Button
+                                    android:text="Nowa część"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:id="@+id/add_new_part"/>
+                            <co.moonmonkeylabs.realmrecyclerview.RealmRecyclerView
+                                    android:id="@+id/realm_recycler_view_form_parts"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-                                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                                              android:orientation="vertical">
-                                    <android.support.v7.widget.CardView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent" android:layout_marginLeft="20dp"
-                                            android:layout_marginRight="20dp" android:layout_marginTop="20dp"
-                                    >
-                                        <EditText
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:inputType="textPersonName"
-                                                android:ems="10"
-                                                android:background="@android:color/transparent"
-                                                android:textCursorDrawable="@null"
-                                                android:id="@+id/editText5" android:paddingTop="20dp"
-                                                android:paddingBottom="20dp" android:paddingLeft="20dp"
-                                                android:paddingRight="20dp" android:hint="Element"
-                                                android:textColor="@color/colorEdittext"/>
-                                    </android.support.v7.widget.CardView>
-                                    <android.support.v7.widget.CardView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent" android:layout_marginLeft="20dp"
-                                            android:layout_marginRight="20dp" android:layout_marginTop="20dp">
-                                        <EditText
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:inputType="numberDecimal"
-                                                android:ems="10"
-                                                android:background="@android:color/transparent"
-                                                android:textCursorDrawable="@null"
-                                                android:id="@+id/editText6" android:paddingLeft="20dp"
-                                                android:paddingRight="20dp" android:paddingTop="20dp"
-                                                android:paddingBottom="20dp" android:hint="Cena"
-                                                android:textColor="@color/colorEdittext"/>
-                                    </android.support.v7.widget.CardView>
-                                    <android.support.v7.widget.CardView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent" android:layout_marginLeft="20dp"
-                                            android:layout_marginRight="20dp" android:layout_marginTop="20dp">
-                                        <EditText
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:inputType="textPersonName"
-                                                android:ems="10"
-                                                android:background="@android:color/transparent"
-                                                android:textCursorDrawable="@null"
-                                                android:id="@+id/editText7" android:paddingLeft="20dp"
-                                                android:paddingRight="20dp" android:paddingTop="20dp"
-                                                android:paddingBottom="20dp" android:hint="kolejny"
-                                                android:textColor="@color/colorEdittext"/>
-                                    </android.support.v7.widget.CardView>
-                                    <android.support.v7.widget.CardView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent" android:layout_marginLeft="20dp"
-                                            android:layout_marginRight="20dp" android:layout_marginTop="20dp"
-                                            android:layout_marginBottom="20dp">
-                                        <EditText
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:ems="10"
-                                                android:background="@android:color/transparent"
-                                                android:textCursorDrawable="@null"
-                                                android:id="@+id/editText8" android:paddingLeft="20dp"
-                                                android:paddingRight="20dp" android:paddingTop="20dp"
-                                                android:paddingBottom="20dp" android:inputType="numberDecimal"
-                                                android:hint="Cena"
-                                                android:textColor="@color/colorEdittext"/>
-                                    </android.support.v7.widget.CardView>
-                                </LinearLayout>
-                            </ScrollView>
-                        </LinearLayout>
-                        <LinearLayout
-                                android:id="@+id/tab3"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-                            <ScrollView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-                                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                                              android:orientation="vertical">
-                                    <Switch
-                                            android:text="Wyłącz/ Włącz"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content" android:id="@+id/switch2"
-                                            android:layout_marginRight="20dp" android:layout_marginLeft="20dp"
-                                            android:layout_marginTop="20dp"/>
-                                    <android.support.v7.widget.CardView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent" android:layout_marginLeft="20dp"
-                                            android:layout_marginRight="20dp" android:layout_marginTop="20dp"
-                                    >
-                                        <EditText
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:inputType="textPersonName"
-                                                android:ems="10"
-                                                android:background="@android:color/transparent"
-                                                android:textCursorDrawable="@null"
-                                                android:id="@+id/editText9" android:paddingTop="20dp"
-                                                android:paddingBottom="20dp" android:paddingLeft="20dp"
-                                                android:paddingRight="20dp" android:hint="Nazwa warsztatu"
-                                                android:textColor="@color/colorEdittext"/>
-                                    </android.support.v7.widget.CardView>
-                                    <android.support.v7.widget.CardView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent" android:layout_marginLeft="20dp"
-                                            android:layout_marginRight="20dp" android:layout_marginTop="20dp">
-                                        <EditText
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:inputType="numberDecimal"
-                                                android:ems="10"
-                                                android:background="@android:color/transparent"
-                                                android:textCursorDrawable="@null"
-                                                android:id="@+id/editText10" android:paddingLeft="20dp"
-                                                android:paddingRight="20dp" android:paddingTop="20dp"
-                                                android:paddingBottom="20dp" android:hint="Adres"
-                                                android:textColor="@color/colorEdittext"/>
-                                    </android.support.v7.widget.CardView>
-                                    <android.support.v7.widget.CardView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent" android:layout_marginLeft="20dp"
-                                            android:layout_marginRight="20dp" android:layout_marginTop="20dp"
-                                            android:layout_marginBottom="20dp">
-                                        <EditText
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:ems="10"
-                                                android:background="@android:color/transparent"
-                                                android:textCursorDrawable="@null"
-                                                android:id="@+id/editText12" android:paddingLeft="20dp"
-                                                android:paddingRight="20dp" android:paddingTop="20dp"
-                                                android:paddingBottom="20dp" android:inputType="numberDecimal"
-                                                android:hint="Cena"
-                                                android:textColor="@color/colorEdittext"/>
-                                    </android.support.v7.widget.CardView>
-                                </LinearLayout>
-                            </ScrollView>
-                        </LinearLayout>
-                        <LinearLayout
-                                android:id="@+id/tab4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-                            <TableRow
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent" android:layout_marginTop="20dp"
-                                    android:layout_marginBottom="10dp">
-                                <TextView
-                                        android:text="Zdjęcia:"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content" android:id="@+id/textView25"/>
-                                <TextView
-                                        android:text="(6):"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content" android:id="@+id/textView26"/>
-                            </TableRow>
-                            <TableRow
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-                                <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp" app:srcCompat="@drawable/enginetrst"
-                                        android:id="@+id/imageView10"/>
-                                <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp" app:srcCompat="@drawable/enginetrst"
-                                        android:id="@+id/imageView10"/>
-                                <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp" app:srcCompat="@drawable/enginetrst"
-                                        android:id="@+id/imageView10"/>
-                            </TableRow>
-                            <TableRow
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-                                <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp" app:srcCompat="@drawable/enginetrst"
-                                        android:id="@+id/imageView10"/>
-                                <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp" app:srcCompat="@drawable/enginetrst"
-                                        android:id="@+id/imageView10"/>
-                                <ImageView
-                                        android:layout_width="100dp"
-                                        android:layout_height="100dp" app:srcCompat="@drawable/enginetrst"
-                                        android:id="@+id/imageView10"/>
-                            </TableRow>
-                            <android.support.design.widget.CoordinatorLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent" android:layout_marginTop="20dp"
-                                    android:layout_marginBottom="20dp">
-
-                                <ImageButton
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        app:srcCompat="@drawable/ic_local_see_black_48dp" android:id="@+id/imageButton"
-                                        android:layout_gravity="center_horizontal|center"
-                                        android:background="@color/colorPrimary"/>
-                            </android.support.design.widget.CoordinatorLayout>
+                                    android:layout_height="277dp"
+                                    app:rrvIsRefreshable="false"
+                                    app:rrvLayoutType="LinearLayout"
+                            />
                         </LinearLayout>
                     </FrameLayout>
                 </LinearLayout>
@@ -368,7 +238,7 @@
                 <Button
                         android:text="Anuluj"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/cancell" android:layout_gravity="bottom|end"
+                        android:layout_height="wrap_content" android:id="@+id/cancel" android:layout_gravity="bottom|end"
                         android:layout_marginRight="120dp" android:textColor="@color/colorEvent"
                         android:background="@color/colorAllert"/>
                 <Button

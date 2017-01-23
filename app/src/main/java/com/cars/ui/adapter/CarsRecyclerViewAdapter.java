@@ -1,16 +1,18 @@
 package com.cars.ui.adapter;
 
 import android.content.Context;
-import android.content.Intent;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.cars.data.controller.CarController;
 import com.cars.data.model.Car;
 import com.cars.data.model.FuelTypUtil;
 import com.cars.ui.R;
-import com.cars.ui.flow.CarFlow;
+import com.cars.ui.flow.Router;
 import io.realm.RealmBasedRecyclerViewAdapter;
 import io.realm.RealmResults;
 import io.realm.RealmViewHolder;
@@ -40,6 +42,23 @@ public class CarsRecyclerViewAdapter extends RealmBasedRecyclerViewAdapter<Car,C
         viewHolder.fuel.setText(FuelTypUtil.getFuelName(result.getFuelTyp()));
     }
 
+    public void longClick(final Integer id) {
+        AlertDialog alertDialog = new AlertDialog.Builder(getContext()).setMessage("Usunąć?").setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                new CarController().remove(id);
+                notifyDataSetChanged();
+                dialogInterface.dismiss();
+            }
+        }).setNegativeButton("Nie", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        }).create();
+        alertDialog.show();
+    }
+
     public class ViewHolder extends RealmViewHolder {
 
         public TextView mark,model,year,mileage,capacity,fuel;
@@ -50,14 +69,14 @@ public class CarsRecyclerViewAdapter extends RealmBasedRecyclerViewAdapter<Car,C
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    CarFlow.showCar(getContext(), id);
+                    Router.showCar(getContext(), id);
                 }
             });
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    Log.d("LONG", "CLICK");
+                    longClick(id);
                     return true;
                 }
             });

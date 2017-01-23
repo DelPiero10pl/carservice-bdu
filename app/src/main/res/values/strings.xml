@@ -2,6 +2,8 @@
     <string name="app_name">CarSUI</string>
     <string name="car_prompt">Wybierz samochód</string>
     <string name="validate_error">Formularz nie został poprawnie wypełniony</string>
+    <string name="cost_hint">Koszt</string>
+    <string name="part_name">Nazwa</string>
     <string-array name="fuel_array">
         <item>ON</item>
         <item>PB</item>

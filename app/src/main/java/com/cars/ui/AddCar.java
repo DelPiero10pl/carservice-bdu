@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import com.cars.data.controller.CarController;
 import com.cars.data.model.Car;
+import io.realm.Realm;
 
 import static com.cars.data.controller.CarController.CAR_ID;
 
@@ -21,15 +22,28 @@ public class AddCar extends AppCompatActivity {
     private Button cancel,save;
     private EditText mark,model,year,engine,mileage;
     private Spinner fuelType;
+    private Intent intent;
+    private Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car);
         context = this;
+        intent = getIntent();
         initUI();
+        realm = Realm.getDefaultInstance();
 
-        save.setOnClickListener(saveCar());
+        if(intent.hasExtra(CarController.CAR_ID)) {
+            Car car = realm.where(Car.class).equalTo("id", intent.getIntExtra(CarController.CAR_ID, 0)).findFirst();
+            mark.setText(car.getMark());
+            model.setText(car.getModel());
+            year.setText(car.getProductionYear().toString());
+            engine.setText(car.getCapacity().toString());
+            mileage.setText(car.getMileage().toString());
+            fuelType.setSelection(car.getFuelTyp()-1);
+            save.setOnClickListener(updateCar(car.getId()));
+        } else save.setOnClickListener(saveCar());
         cancel.setOnClickListener(back());
     }
 
@@ -47,6 +61,22 @@ public class AddCar extends AppCompatActivity {
                     intent.putExtra(CAR_ID, car.getId());
                     context.startActivity(intent);
                 } else Toast.makeText(context, getString(R.string.validate_error), Toast.LENGTH_LONG).show();
+            }
+        };
+    }
+
+    private View.OnClickListener updateCar(final Integer id) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Double cap = Double.parseDouble(engine.getText().toString());
+                Integer mileageI = Integer.parseInt(mileage.getText().toString());
+                Integer yearI = Integer.parseInt(year.getText().toString());
+                long fTyp = fuelType.getSelectedItemId()+1;
+                Car car = new CarController().update(id,mark.getText().toString(), model.getText().toString(), cap, (int) fTyp, mileageI, yearI);
+                Intent intent = new Intent(context, com.cars.ui.Car.class);
+                intent.putExtra(CAR_ID, car.getId());
+                context.startActivity(intent);
             }
         };
     }

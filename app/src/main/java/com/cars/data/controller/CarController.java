@@ -1,6 +1,9 @@
 package com.cars.data.controller;
 
 import com.cars.data.model.Car;
+import com.cars.data.model.Photo;
+import com.cars.data.model.Repair;
+import io.realm.RealmResults;
 
 public class CarController extends Controller<Car> {
 
@@ -34,6 +37,20 @@ public class CarController extends Controller<Car> {
         car.setProductionYear(productionYear);
         realm.commitTransaction();
         return car;
+    }
+
+    public boolean remove(Integer id) {
+        realm.beginTransaction();
+        Car car = findByID(id);
+        RealmResults<Repair> resultRepair = realm.where(Repair.class).equalTo("car.id", car.getId()).findAll();
+        for (Repair repair:resultRepair) {
+            realm.where(Photo.class).equalTo("repair.id", repair.getId()).findAll().deleteAllFromRealm();
+            repair.getParts().deleteAllFromRealm();
+            repair.deleteFromRealm();
+        }
+        car.deleteFromRealm();
+        realm.commitTransaction();
+        return true;
     }
 
 
