@@ -70,8 +70,8 @@
                             </TableRow>
                             <ImageButton
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" app:srcCompat="@drawable/car"
-                                    android:id="@+id/take_photo"/>
+                                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_photo_camera_white_24dp"
+                                    android:id="@+id/take_photo" android:backgroundTint="@color/colorPrimary"/>
                         </LinearLayout>
                         <LinearLayout
                                 android:id="@+id/tab3"
@@ -106,7 +106,8 @@
                                                     android:layout_width="66dp"
                                                     android:layout_height="61dp"
                                                     app:srcCompat="@drawable/ic_edit_white_18dp"
-                                                    android:id="@+id/new_workshop"/>
+                                                    android:id="@+id/new_workshop"
+                                                    android:backgroundTint="@color/colorPrimary"/>
                                         </LinearLayout>
                                         <android.support.v7.widget.CardView
                                                 android:layout_width="match_parent"
@@ -218,7 +219,9 @@
                             <Button
                                     android:text="Nowa część"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" android:id="@+id/add_new_part"/>
+                                    android:layout_height="wrap_content" android:id="@+id/add_new_part"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:textColor="@android:color/white"/>
                             <co.moonmonkeylabs.realmrecyclerview.RealmRecyclerView
                                     android:id="@+id/realm_recycler_view_form_parts"
                                     android:layout_width="match_parent"

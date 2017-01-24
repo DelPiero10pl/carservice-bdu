@@ -30,9 +30,9 @@
                             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_directions_car_black_36dp"
                             android:id="@+id/imageView2" android:paddingLeft="10dp"/>
                     <TextView
-                            android:text="Nowy samochód ?"
+                            android:text="@string/new_car"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:id="@+id/textView" android:paddingLeft="10dp"
+                            android:layout_height="wrap_content" android:id="@+id/new_edit_Car_title" android:paddingLeft="10dp"
                             android:paddingTop="10dp" android:textColor="@color/colorText" android:textSize="18sp"
                     />
                 </LinearLayout>

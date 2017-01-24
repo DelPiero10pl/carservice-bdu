@@ -5,10 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.*;
 import com.cars.data.controller.CarController;
 import com.cars.data.model.Car;
 import io.realm.Realm;
@@ -24,6 +21,7 @@ public class AddCar extends AppCompatActivity {
     private Spinner fuelType;
     private Intent intent;
     private Realm realm;
+    private TextView eventname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +34,7 @@ public class AddCar extends AppCompatActivity {
 
         if(intent.hasExtra(CarController.CAR_ID)) {
             Car car = realm.where(Car.class).equalTo("id", intent.getIntExtra(CarController.CAR_ID, 0)).findFirst();
+            eventname.setText(getString(R.string.edit_car));
             mark.setText(car.getMark());
             model.setText(car.getModel());
             year.setText(car.getProductionYear().toString());
@@ -105,6 +104,7 @@ public class AddCar extends AppCompatActivity {
         engine = (EditText) findViewById(R.id.engine);
         mileage = (EditText) findViewById(R.id.mileage);
         fuelType = (Spinner) findViewById(R.id.fuel_type);
+        eventname = (TextView) findViewById(R.id.new_edit_Car_title);
     }
 
 

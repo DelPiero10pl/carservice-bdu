@@ -4,6 +4,8 @@
     <string name="validate_error">Formularz nie został poprawnie wypełniony</string>
     <string name="cost_hint">Koszt</string>
     <string name="part_name">Nazwa</string>
+    <string name="new_car">Nowy Samochód</string>
+    <string name="edit_car">Edytuj Samochód</string>
     <string-array name="fuel_array">
         <item>ON</item>
         <item>PB</item>

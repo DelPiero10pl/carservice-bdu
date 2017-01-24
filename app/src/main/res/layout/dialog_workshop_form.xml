@@ -2,12 +2,16 @@
               android:orientation="vertical"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content">
-    <ImageView
+    <TableRow
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:scaleType="center"
-            android:background="@color/colorAllert"
-            android:contentDescription="@string/app_name" />
+            android:layout_height="match_parent" android:background="@color/colorPrimary">
+        <TextView
+                android:text="Dodaj Warsztat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView3" android:paddingTop="20dp"
+                android:paddingLeft="20dp" android:paddingRight="20dp" android:paddingBottom="20dp"
+                android:textColor="@android:color/white" android:textStyle="normal|bold"/>
+    </TableRow>
     <EditText
             android:id="@+id/name_workshop"
             android:inputType="textEmailAddress"
