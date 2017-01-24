@@ -68,6 +68,7 @@ public class AddCar extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(isvValid()) {
                 Double cap = Double.parseDouble(engine.getText().toString());
                 Integer mileageI = Integer.parseInt(mileage.getText().toString());
                 Integer yearI = Integer.parseInt(year.getText().toString());
@@ -76,6 +77,7 @@ public class AddCar extends AppCompatActivity {
                 Intent intent = new Intent(context, com.cars.ui.Car.class);
                 intent.putExtra(CAR_ID, car.getId());
                 context.startActivity(intent);
+                } else Toast.makeText(context, getString(R.string.validate_error), Toast.LENGTH_LONG).show();
             }
         };
     }
