@@ -119,6 +119,13 @@ public class AddHistoryRepair extends AppCompatActivity {
         spec.setContent(R.id.tab4);
         spec.setIndicator("Zdjęcia");
         host.addTab(spec);
+        
+        for (int i = 0; i < host.getTabWidget().getChildCount(); i++) {
+            TextView x = (TextView) host.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
+            x.setTextSize(9);
+        }
+
+
         workshopResult = realm.where(Workshop.class).findAll();
 
 

@@ -11,7 +11,7 @@
     <color name="colorEdittext">#e67a90</color>
     <color name="colorTextButton">#848D82</color>
 
-
+    <color name="black_overlay">#66000000</color>
 
 
 </resources>

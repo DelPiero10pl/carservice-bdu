@@ -1,6 +1,7 @@
 package com.cars.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -12,7 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.cars.data.model.Photo;
+import com.cars.ui.ImgActivity;
 import com.cars.ui.R;
+import com.cars.ui.flow.Router;
 import io.realm.RealmBasedRecyclerViewAdapter;
 import io.realm.RealmResults;
 import io.realm.RealmViewHolder;
@@ -54,6 +57,14 @@ public class PhotoRecycleViewAdapter  extends RealmBasedRecyclerViewAdapter<Phot
         bmOptions.inPurgeable = true;
         Bitmap bitmap = BitmapFactory.decodeFile(realmResults.get(i).getFilename(), bmOptions);
         viewHolder.photo.setImageBitmap(bitmap);
+        viewHolder.photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ImgActivity.class);
+                intent.putExtra("img", realmResults.get(i).getFilename());
+                getContext().startActivity(intent);
+            }
+        });
         viewHolder.photoCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
