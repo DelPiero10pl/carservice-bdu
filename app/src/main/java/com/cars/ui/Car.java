@@ -79,4 +79,9 @@ public class Car extends AppCompatActivity {
         repairList.setAdapter(adapter);
         edit = (FloatingActionButton) findViewById(R.id.edit_car);
     }
+
+    @Override
+    public void onBackPressed() {
+        Router.showCarsList(this);
+    }
 }

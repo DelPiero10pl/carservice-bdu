@@ -4,11 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.*;
 import com.cars.data.controller.CarController;
 import com.cars.data.model.Car;
 import io.realm.Realm;
+
+import java.util.Calendar;
 
 import static com.cars.data.controller.CarController.CAR_ID;
 
@@ -103,8 +106,12 @@ public class AddCar extends AppCompatActivity {
         mark = (EditText) findViewById(R.id.mark);
         model = (EditText) findViewById(R.id.model);
         year = (EditText) findViewById(R.id.year);
+        Calendar calendar = Calendar.getInstance();
+        int maxYear = calendar.get(Calendar.YEAR);
+        year.setFilters(new InputFilter[]{ new InputFilterMinMax("1", String.valueOf(maxYear))});
         engine = (EditText) findViewById(R.id.engine);
         mileage = (EditText) findViewById(R.id.mileage);
+        mileage.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "9000000")});
         fuelType = (Spinner) findViewById(R.id.fuel_type);
         eventname = (TextView) findViewById(R.id.new_edit_Car_title);
     }

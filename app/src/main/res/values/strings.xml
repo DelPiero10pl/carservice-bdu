@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">CarSUI</string>
+    <string name="app_name">Car Service</string>
+    <string name="author">Ireneusz i Jarosław Kuliga</string>
     <string name="car_prompt">Wybierz samochód</string>
     <string name="validate_error">Formularz nie został poprawnie wypełniony</string>
     <string name="cost_hint">Koszt</string>

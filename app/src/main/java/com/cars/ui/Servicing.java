@@ -152,15 +152,25 @@ public class Servicing extends AppCompatActivity implements OnMapReadyCallback {
             try {
                 List<Address> geo = geocoder.getFromLocationName(modelDB.getWorkshop().getLocalization(), 1);
 
+                if(geo.size()>0) {
+                    LatLng sydney = new LatLng(geo.get(0).getLatitude(), geo.get(0).getLongitude());
 
-                LatLng sydney = new LatLng(geo.get(0).getLatitude(), geo.get(0).getLongitude());
+                    googleMap.addMarker(new MarkerOptions().position(sydney)
+                            .title(modelDB.getWorkshop().getName()));
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+                } else findViewById(R.id.map).setVisibility(View.GONE);
 
-                googleMap.addMarker(new MarkerOptions().position(sydney)
-                        .title("Marker in Sydney"));
-                googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(modelDB!=null)
+            Router.showCar(this, modelDB.getCar().getId());
+        else
+            super.onBackPressed();
     }
 }

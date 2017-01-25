@@ -46,7 +46,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                     <EditText
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
                             android:ems="10"
@@ -56,11 +56,6 @@
                             android:paddingLeft="5dp" android:paddingRight="5dp"
                             android:textColorLink="@color/colorAccent" android:hint="Name"
                             android:textColor="@color/colorEdittext"/>
-                    <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_mic_black_24dp"
-                            android:id="@+id/imageView8" android:layout_weight="1"
-                            android:clickable="true" android:paddingTop="20dp"/>
                 </TableRow>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
@@ -69,7 +64,7 @@
                     android:layout_marginRight="20dp">
 
                 <EditText
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:focusable="false"
@@ -102,13 +97,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/cancell" android:layout_gravity="bottom|end"
                         android:layout_marginRight="120dp" android:textColor="@color/colorEvent"
-                        android:background="@color/colorAllert"/>
+                        android:backgroundTint="@color/colorAllert"/>
                 <Button
                         android:text="Zapisz"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/save"
                         android:layout_marginRight="20dp" android:layout_gravity="bottom|right|end"
-                        android:background="@color/colorEdittext" android:textColor="@color/colorEvent"/>
+                        android:textColor="@color/colorEvent" android:backgroundTint="@color/colorEdittext"/>
             </android.support.design.widget.CoordinatorLayout>
         </LinearLayout>
     </ScrollView>

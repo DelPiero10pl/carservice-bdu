@@ -23,6 +23,8 @@ public class RepairController extends Controller<Repair> {
         Repair repair = create();
         repair.setName(name);
         repair.setCar(car);
+        if(car.getMileage()<mileage && !planed)
+            car.setMileage(mileage);
         repair.setDate(DateHelper.format(date));
         repair.setMilage(mileage);
         if(workshop != null) repair.setWorkshop(workshop);
@@ -32,7 +34,6 @@ public class RepairController extends Controller<Repair> {
             RealmList<Part> ml = new RealmList<>();
             ml.addAll(copy);
             repair.setParts(ml);
-
         }
         repair.setPlaned(planed);
         realm.commitTransaction();

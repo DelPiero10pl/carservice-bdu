@@ -243,13 +243,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/cancel" android:layout_gravity="bottom|end"
                         android:layout_marginRight="120dp" android:textColor="@color/colorEvent"
-                        android:background="@color/colorAllert"/>
+                        android:backgroundTint="@color/colorAllert"/>
                 <Button
                         android:text="Zapisz"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/save"
                         android:layout_marginRight="20dp" android:layout_gravity="bottom|right|end"
-                        android:background="@color/colorEdittext" android:textColor="@color/colorEvent"/>
+                        android:textColor="@color/colorEvent" android:backgroundTint="@color/colorEdittext"/>
             </android.support.design.widget.CoordinatorLayout>
         </LinearLayout>
     </ScrollView>

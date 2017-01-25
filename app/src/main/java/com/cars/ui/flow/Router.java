@@ -44,6 +44,11 @@ public class Router {
         ctx.startActivity(intent);
     }
 
+    public static void open(Context ctx, Class des) {
+        Intent intent = new Intent(ctx, des);
+        ctx.startActivity(intent);
+    }
+
 
 
 }

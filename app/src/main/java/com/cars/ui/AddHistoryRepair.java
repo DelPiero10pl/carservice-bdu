@@ -16,6 +16,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -413,6 +414,7 @@ public class AddHistoryRepair extends AppCompatActivity {
         name = (EditText) findViewById(R.id.name);
         date = (EditText) findViewById(R.id.date);
         millage = (EditText) findViewById(R.id.millage);
+        millage.setFilters(new InputFilter[]{ new InputFilterMinMax("1", "9000000")});
         takePhoto = (ImageButton) findViewById(R.id.take_photo);
 
     }

@@ -12,6 +12,7 @@ import co.moonmonkeylabs.realmrecyclerview.RealmRecyclerView;
 import com.cars.data.model.*;
 import com.cars.data.model.Car;
 import com.cars.ui.adapter.CarsRecyclerViewAdapter;
+import com.cars.ui.flow.Router;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -47,5 +48,10 @@ public class CarList extends AppCompatActivity {
     private void initUI() {
         addcar = (FloatingActionButton) findViewById(R.id.addcarFAButton);
         carList = (RealmRecyclerView) findViewById(R.id.realm_recycler_view);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Router.open(this, Home.class);
     }
 }

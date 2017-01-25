@@ -11,4 +11,36 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="com.cars.ui.CostStat">
 
+    <TextView
+            android:text="Wydatki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true" android:id="@+id/textView11"
+            android:textSize="36sp"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_below="@+id/textView11"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true">
+        <TextView
+                android:text="Części"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_below="@+id/textView11"
+                android:layout_alignParentLeft="true" android:layout_alignParentStart="true" android:layout_marginTop="13dp"
+                android:id="@+id/textView14" android:textSize="18sp"/>
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" android:id="@+id/parts_rc"/>
+        <TextView
+                android:text="Warsztaty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView24" android:textSize="18sp"/>
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="15dp" android:layout_below="@+id/textView14" android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" android:id="@+id/workshop_rc"/>
+    </LinearLayout>
 </RelativeLayout>
